@@ -231,15 +231,16 @@ RPROMPT='%D{%H:%M - %a %d}'
 ##### Aliases
 alias addalias="sub ~/.oh-my-zsh/themes/ash.zsh-theme"
 alias realias="source ~/.oh-my-zsh/themes/ash.zsh-theme"
+alias zconf="sub ~/.zshrc"
 
 ## Run in background
 bag() {
-  nohup $* >/dev/null 2>&1 &
+  $* >/dev/null 2>&1 &!
 }
 
 ## Run Sublime in background
 sub() {
-  nohup subl $1 >/dev/null 2>&1 &
+  subl $1 >/dev/null 2>&1 &!
 }
 
 ## Search
@@ -284,6 +285,9 @@ alias pol="p8 | lolcat &"
 
 alias gofish="bag nautilus ."
 
+## Todo
+alias t="~/quick/todo.txt/todo.sh"
+
 ## get working
 alias work="~/quick/workhorse.sh"
 
@@ -296,7 +300,7 @@ alias microwd="cd ~/Documents/Anima/Microwd/web/httpdocs"
 alias tuuu="cd ~/Documents/Anima/TuuuLibreria/web/httpdocs"
 alias instavets="cd ~/Documents/Anima/Instavets/instavets_3.0"
 
-alias tfg="cd ~/Documents/Universidad/A\ TFG"
+alias tfg="cd ~/Documents/Universidad/A\ TFG/tfg"
 
 ## apt-get
 alias update="sudo apt-get update ; sudo apt-get upgrade -y"
