@@ -243,6 +243,12 @@ sub() {
   subl $1 >/dev/null 2>&1 &!
 }
 
+## Start Minecraft
+minecraft() {
+  java -jar ~/Mainstay/Minecraft/Minecraft.jar >/dev/null 2>&1 &!
+  exit
+}
+
 ## Search
 alias getit="grep -rn '.' -e"
 alias find="find . | grep"
@@ -281,7 +287,12 @@ alias webpack="pushd ~/Documents/Anima/Instavets/instavets_3.0/static_files/js/r
 
 ## Ping related
 alias p8="ping 8.8.8.8"
+alias pdg="ping 192.168.1.1"
 alias pol="p8 | lolcat &"
+
+ytitle() {
+  (curl --silent $1 | grep \<title\> | sed 's/^.*<title>//' | sed 's/ - YouTube<\/title>.*$//'; echo "\n\n") & echo "\n\n"
+}
 
 alias gofish="bag nautilus ."
 
@@ -296,11 +307,13 @@ alias rainbound="cd /media/jaime/DATA/Mis\ documentos/Universidad/Y\ Cuarto\ añ
 alias tis="rainbound"
 
 alias wbb="cd ~/Documents/Anima/Wobybi/wobybi"
-alias microwd="cd ~/Documents/Anima/Microwd/web/httpdocs"
+alias microwd="cd ~/Documents/Anima/Microwd"
 alias tuuu="cd ~/Documents/Anima/TuuuLibreria/web/httpdocs"
 alias instavets="cd ~/Documents/Anima/Instavets/instavets_3.0"
+alias instavets="instavets; ..; instashop"
+alias instashop="cd ~/Documents/Anima/Instavets/instashop"
 
-alias tfg="cd ~/Documents/Universidad/A\ TFG/tfg"
+alias tfg="cd ~/Documents/Universidad/A_TFG/tfg"
 
 ## apt-get
 alias update="sudo apt-get update ; sudo apt-get upgrade -y"
@@ -339,9 +352,12 @@ alias scannet="sudo arp-scan --interface=wlan0 --localnet"
 
 alias falert="date; sleep 600; alert"
 
+alias qcheck="/home/jaime/quick/qcheck"
+
 
 
 ## sHIT
+eval "$(thefuck --alias)"
 alias mkae="make"
 alias celan="clear"
 alias clean="clear"
@@ -356,3 +372,7 @@ murder() {
 ## Sharing
 alias share="sudo nc -v -l 7173 <"
 alias serve="python -m SimpleHTTPServer"
+
+## Prompt hello
+
+#echo "Wobybi free orders." | lolcat
